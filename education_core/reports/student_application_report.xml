@@ -140,14 +140,7 @@
                                                     <span t-if="o.nationality" t-field="o.nationality.name"/>
                                                 </td>
                                             </tr>
-                                            <tr t-if="o.mother_tongue">
-                                                <td style="text-align:left; padding-left:10px;" class="col-xs-4">
-                                                    <strong><span t-if="o.mother_tongue">Mother Tongue:</span></strong>
-                                                </td>
-                                                <td style="text-align:left;" class="col-xs-4">
-                                                    <span t-if="o.mother_tongue" t-field="o.mother_tongue.name"/>
-                                                </td>
-                                            </tr>
+
                                             <tr t-if="o.mobile">
                                                 <td style="text-align:left; padding-left:10px;" class="col-xs-4">
                                                     <strong><span t-if="o.mobile">Mobile:</span></strong>
