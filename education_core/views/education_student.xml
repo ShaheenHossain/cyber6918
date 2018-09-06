@@ -197,14 +197,14 @@
                 <field name="gender"/>
                 <field name="religion_id"/>
 
-                <field name="mother_tongue"/>
+
                 <group expand='0' string='Group by...'>
                     <filter string='Class' icon="fa-user" domain="[]" context="{'group_by' : 'class_id'}"/>
                     <filter string='Gender' icon="fa-genderless" domain="[]" context="{'group_by' : 'gender'}"/>
                     <filter string='Medium' icon="fa-medium" domain="[]" context="{'group_by' : 'medium'}"/>
                     <filter string='Religion' icon="fa-pencil-square-o" domain="[]" context="{'group_by' : 'religion_id'}"/>
 
-                    <filter string='Mother Tongue' icon="fa fa-language" domain="[]" context="{'group_by' : 'mother_tongue'}"/>
+
                </group>
            </search>
         </field>
