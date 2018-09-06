@@ -148,7 +148,7 @@
                                             <field name="street" placeholder="House No. / Village..." class="o_address_street"/>
                                             <field name="street2" placeholder="Road No. / Post Office...." class="o_address_street"/>
                                             <field name="city" placeholder="City/ P.S " class="o_address_city"/>
-                                            <field name="state_id" class="o_address_state" placeholder="District"/>
+                                            <field name="mystate_id" class="o_address_mystate" placeholder="District"/>
                                             <field name="zip" placeholder="Post Code" class="o_address_zip"/>
                                             <field name="mycountry_id" placeholder="Country Name" class="o_address_mycountry"/>
                                         </div>
@@ -162,7 +162,7 @@
                                             <field name="per_street" placeholder="House No. / Village..." class="o_address_street"/>
                                             <field name="per_street2" placeholder="Road No. / Post Office...." class="o_address_street"/>
                                             <field name="per_city" placeholder="City/ P.S " class="o_address_city"/>
-                                            <field name="per_state_id" class="o_address_state" placeholder="District"/>
+                                            <field name="per_mystate_id" class="o_address_mystate" placeholder="District"/>
                                             <field name="per_zip" placeholder="Post Code" class="o_address_zip"/>
                                             <field name="per_mycountry_id" placeholder="Country Name" class="o_address_mycountry"/>
                                         </div>
