@@ -69,7 +69,7 @@ class StudentApplication(models.Model):
                 'application_id': rec.id,
                 'father_name': rec.father_name,
                 'mother_name': rec.mother_name,
-                'guardian_name': rec.guardian_name.id,
+                'guardian_name': rec.guardian_name,
                 'street': rec.street,
                 'street2': rec.street2,
                 'city': rec.city,
