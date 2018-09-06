@@ -56,24 +56,24 @@ class EducationStudent(models.Model):
     class_id = fields.Many2one('education.class.division', string="Class")
     admission_class = fields.Many2one('education.class', string="Admission Class")
     ad_no = fields.Char(string="Admission Number", readonly=True)
-    gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('other', 'Other')],
-                              string='Gender', required=True, default='male', track_visibility='onchange')
+    gender = fields.Selection([('male', 'Male'), ('female', 'Female')],
+                              string='Gender', required=True, track_visibility='onchange')
     blood_group = fields.Selection([('a+', 'A+'), ('a-', 'A-'), ('b+', 'B+'), ('o+', 'O+'), ('o-', 'O-'),
                                     ('ab-', 'AB-'), ('ab+', 'AB+')],
-                                   string='Blood Group', required=True, default='a+', track_visibility='onchange')
+                                   string='Blood Group', required=True, track_visibility='onchange')
     company_id = fields.Many2one('res.company', string='Company')
     per_street = fields.Char()
     per_street2 = fields.Char()
     per_zip = fields.Char(change_default=True)
     per_city = fields.Char()
-    per_state_id = fields.Many2one("res.country.state", string='State', ondelete='restrict')
-    per_country_id = fields.Many2one('res.country', string='Country', ondelete='restrict')
-    medium = fields.Many2one('education.medium', string="Medium", required=True)
+    per_state_id = fields.Many2one("state.state", string='State', ondelete='restrict')
+    per_country_id = fields.Many2one('country.country', string='Country', ondelete='restrict')
+    medium = fields.Many2one('education.medium', string="Medium",)
     
     
     religion_id = fields.Many2one('religion.religion', string="Religion")
     is_same_address = fields.Boolean(string="Is same Address?")
-    nationality = fields.Many2one('res.country', string='Nationality', ondelete='restrict')
+    nationality = fields.Many2one('country.country', string='Nationality', ondelete='restrict')
     application_id = fields.Many2one('education.application', string="Application No")
     class_history_ids = fields.One2many('education.class.history', 'student_id', string="Application No")
 
