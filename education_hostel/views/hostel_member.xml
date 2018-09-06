@@ -44,17 +44,17 @@
                                 <field name="member_fac_name" attrs="{'invisible': [('member_type', '=', 'is_student')]}" />
                                 <label for="street" string="Address"/>
                                     <div class="o_address_format">
-                                        <field name="street" placeholder="Street..." class="o_address_street"
+                                        <field name="street" placeholder="House No. / Village" class="o_address_street"
                                             />
-                                        <field name="street2" placeholder="Street 2..." class="o_address_street"
+                                        <field name="street2" placeholder="Road No. / Post Office" class="o_address_street"
                                             />
-                                        <field name="city" placeholder="City" class="o_address_city"
+                                        <field name="city" placeholder="City/ P.S" class="o_address_city"
                                             />
-                                        <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}'
-                                            />
+                                        <field name="state_id" class="o_address_state" placeholder="District" 
+                                               />
                                         <field name="zip" placeholder="ZIP" class="o_address_zip"
                                             />
-                                        <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'
+                                        <field name="country_id" placeholder="Country" class="o_address_country" 
                                             />
                                     </div>
                             </group>
