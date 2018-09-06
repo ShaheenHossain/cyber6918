@@ -96,7 +96,7 @@ class StudentApplication(models.Model):
                 'religion_id': rec.religion_id.id,
 
 
-                'mother_tongue': rec.mother_tongue.id,
+
                 'admission_class': rec.admission_class.id,
                 'company_id': rec.company_id.id,
             }
@@ -194,8 +194,7 @@ class StudentApplication(models.Model):
                              help="Choose the Medium of class, like English, Hindi etc")
  
 
-    mother_tongue = fields.Many2one('education.mother.tongue', string="Mother Tongue",
-                                    required=True, help="Enter Student's Mother Tongue")
+
     admission_class = fields.Many2one('education.class', string="Class", required=True,
                                       help="Enter Class to which the admission is seeking")
     admission_date = fields.Date(String='Admission Date')
