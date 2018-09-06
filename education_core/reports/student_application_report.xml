@@ -122,22 +122,8 @@
                                                     <span t-if="o.religion_id" t-field="o.religion_id.name"/>
                                                 </td>
                                             </tr>
-                                            <tr t-if="o.caste_id">
-                                                <td style="text-align:left; padding-left:10px;" class="col-xs-4">
-                                                    <strong><span t-if="o.caste_id">Caste:</span></strong>
-                                                </td>
-                                                <td style="text-align:left;" class="col-xs-4">
-                                                    <span t-if="o.caste_id" t-field="o.caste_id.name"/>
-                                                </td>
-                                            </tr>
-                                            <tr t-if="o.date_of_birth">
-                                                <td style="text-align:left; padding-left:10px;" class="col-xs-4">
-                                                    <strong><span>Date of Birth:</span></strong>
-                                                </td>
-                                                <td style="text-align:left;" class="col-xs-4">
-                                                    <span t-if="o.date_of_birth" t-field="o.date_of_birth"/>
-                                                </td>
-                                            </tr>
+
+
                                             <tr t-if="o.blood_group">
                                                 <td style="text-align:left; padding-left:10px;" class="col-xs-4">
                                                     <strong><span t-if="o.blood_group">Blood Group:</span></strong>
