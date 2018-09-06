@@ -14,8 +14,8 @@ class EducationHostel(models.Model):
                              index=True, default=lambda self: _('New'))
     name = fields.Many2one('education.host_std', string="Member", required=True)
     hostel = fields.Many2one('education.hostel', string="Hostel", required=True, related='name.hostel')
-    leave_from = fields.Datetime(string="Date From", required=True)
-    leave_to = fields.Datetime(string="Date To", required=True)
+    leave_from = fields.Date(string="Date From")
+    leave_to = fields.Date(string="Date To")
     reason = fields.Text(String="Reason", required=True)
     number_of_days = fields.Float('Number of Days', compute='_get_number_of_days', store=True, track_visibility='onchange',
                                   readonly=True)
@@ -40,8 +40,8 @@ class EducationHostel(models.Model):
         """compute the total leave days"""
         for holiday in self:
             if holiday.leave_from and holiday.leave_to:
-                from_dt = fields.Datetime.from_string(holiday.leave_from)
-                to_dt = fields.Datetime.from_string(holiday.leave_to)
+                from_dt = fields.Date.from_string(holiday.leave_from)
+                to_dt = fields.Date.from_string(holiday.leave_to)
                 time_delta = to_dt - from_dt
                 holiday.number_of_days = math.ceil(time_delta.days + float(time_delta.seconds) / 86400)
 
