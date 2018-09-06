@@ -94,7 +94,7 @@ class StudentApplication(models.Model):
                 'is_student': True,
                 'medium': rec.medium.id,
                 'religion_id': rec.religion_id.id,
-                'caste_id': rec.caste_id.id,
+
 
                 'mother_tongue': rec.mother_tongue.id,
                 'admission_class': rec.admission_class.id,
@@ -232,7 +232,7 @@ class StudentApplication(models.Model):
     father_name = fields.Char(string="Father", help="Proud to say my father is")
     mother_name = fields.Char(string="Mother", help="My mother's name is")
     religion_id = fields.Many2one('religion.religion', string="Religion", help="My Religion is ")
-    caste_id = fields.Many2one('religion.caste', string="Caste", help="My Caste is ")
+
     class_id = fields.Many2one('education.class.division', string="Class")
     active = fields.Boolean(string='Active', default=True)
     document_count = fields.Integer(compute='_document_count', string='# Documents')
