@@ -63,7 +63,7 @@
             <field name="name">A</field>
         </record>
 
-        <record id="education_mother_tongue_data1" model="education.mother.tongue">
+
             <field name="name">Hindi</field>
             <field name="code">HIN</field>
         </record>
@@ -83,7 +83,7 @@
             <field name="code">PR1</field>
         </record>
 
-        <record id="education_mother_tongue_data2" model="education.mother.tongue">
+
             <field name="name">Tamil</field>
             <field name="code">TAM</field>
         </record>
@@ -159,7 +159,7 @@
             <field name="is_same_address">1</field>
             <field name="mobile">9998889988</field>
             <field name="image" type="base64" file="education_core/static/src/img/student.png"/>
-            <field name="mother_tongue" ref="education_mother_tongue_data1"/>
+
         </record>
 
         <record id="student_application_data2" model="education.application">
@@ -181,7 +181,7 @@
             <field name="is_same_address">1</field>
             <field name="mobile">7736773676</field>
             <field name="image" type="base64" file="education_core/static/src/img/student2.jpeg"/>
-            <field name="mother_tongue" ref="education_mother_tongue_data1"/>
+
         </record>
 
         <record id="education_document_data" model="education.documents">
@@ -219,7 +219,7 @@
             <field name="email">steve@cybrosys.in</field>
             <field name="phone">+2547896</field>
             <field name="image" type="base64" file="education_core/static/src/img/student2.jpeg"/>
-            <field name="mother_tongue" ref="education_mother_tongue_data1"/>
+
         </record>
 
         <record id="assign_class_data" model="education.student.class">
