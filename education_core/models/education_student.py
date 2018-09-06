@@ -92,7 +92,7 @@ class EducationStudent(models.Model):
     per_state_id = fields.Many2one("res.country.state", string='State', ondelete='restrict')
     per_country_id = fields.Many2one('res.country', string='Country', ondelete='restrict')
     medium = fields.Many2one('education.medium', string="Medium", required=True)
-    sec_lang = fields.Many2one('education.subject', string="Second language", required=True, domain=[('is_language', '=', True)])
+    
     mother_tongue = fields.Many2one('education.mother.tongue', string="Mother Tongue", required=True, domain=[('is_language', '=', True)])
     caste_id = fields.Many2one('religion.caste', string="Caste")
     religion_id = fields.Many2one('religion.religion', string="Religion")
