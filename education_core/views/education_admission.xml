@@ -87,7 +87,7 @@
                         <group>
                             <field name="date_of_birth" attrs="{'readonly': [('state', '=', 'done')]}"/>
                             <field name="blood_group" attrs="{'readonly': [('state', '=', 'done')]}"/>
-                            <field name="mother_tongue" attrs="{'readonly': [('state', '=', 'done')]}"/>
+
                             <field name="father_name" attrs="{'readonly': [('state', '=', 'done')]}"/>
                             <field name="guardian_name" attrs="{'readonly': [('state', '=', 'done')]}"/>
                         </group>
@@ -191,7 +191,7 @@
                 <field name="gender"/>
                 <field name="religion_id"/>
 
-                <field name="mother_tongue"/>
+
                 <filter string="New Application" name="new_application" domain="[('state','!=','done')]"/>
                 <filter string="Draft" name="draft_filter" domain="[('state','=','draft')]"/>
                 <filter string="Done" name="active" domain="[('state','=','done')]"/>
@@ -203,7 +203,7 @@
                     <filter string='Medium' icon="fa-medium" domain="[]" context="{'group_by' : 'medium'}"/>
                     <filter string='Religion' icon="fa-pencil-square-o" domain="[]" context="{'group_by' : 'religion_id'}"/>
 
-                    <filter string='Mother Tongue' icon="fa fa-language" domain="[]" context="{'group_by' : 'mother_tongue'}"/>
+
                </group>
            </search>
         </field>
