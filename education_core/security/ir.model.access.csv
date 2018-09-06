@@ -19,6 +19,5 @@ access_class_details,access.class.details,education_core.model_class_details,edu
 access_education_student_class,access.education.student.class,education_core.model_education_student_class,education_core.group_education_faculty,1,1,1,0
 access_education_class_history,access.education.class.history,education_core.model_education_class_history,education_core.group_education_faculty,1,1,1,0
 access_education_student_list,access.education.student.list,education_core.model_education_student_list,education_core.group_education_faculty,1,1,1,0
-access_education_mother_tongue,access.education.mother.tongue,education_core.model_education_mother_tongue,education_core.group_education_faculty,1,1,1,0
 access_religion_religion,access.religion.religion,education_core.model_religion_religion,education_core.group_education_faculty,1,1,1,0
 access_religion_caste,access.religion.caste,education_core.model_religion_caste,education_core.group_education_faculty,1,1,1,0
