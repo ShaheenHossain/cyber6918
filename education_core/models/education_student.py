@@ -66,8 +66,8 @@ class EducationStudent(models.Model):
     per_street2 = fields.Char()
     per_zip = fields.Char(change_default=True)
     per_city = fields.Char()
-    per_state_id = fields.Many2one("state.state", string='State', ondelete='restrict')
-    per_country_id = fields.Many2one('country.country', string='Country', ondelete='restrict')
+    per_state_id = fields.Many2one("mystate.mystate", string='District Name', ondelete='restrict')
+    per_mycountry_id = fields.Many2one('mycountry.mycountry', string='Country Name', ondelete='restrict')
     medium = fields.Many2one('education.medium', string="Medium",)
     
     
