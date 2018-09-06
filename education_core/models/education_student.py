@@ -73,7 +73,7 @@ class EducationStudent(models.Model):
     last_name = fields.Char(string='Last Name')
     application_no = fields.Char(string="Application No")
     date_of_birth = fields.Date(string="Date Of birth", requird=True)
-    guardian_name = fields.Many2one('res.partner', string="Guardian", domain=[('is_parent', '=', True)])
+    guardian_name = fields.Char(string="Guardian")
     father_name = fields.Char(string="Father")
     mother_name = fields.Char(string="Mother")
     class_id = fields.Many2one('education.class.division', string="Class")
