@@ -227,8 +227,7 @@ class StudentApplication(models.Model):
     per_country_id = fields.Many2one('res.country', string='Country', ondelete='restrict',
                                      help="Select the Country")
     date_of_birth = fields.Date(string="Date Of birth", required=True, help="Enter your DOB")
-    guardian_name = fields.Many2one('res.partner', string="Guardian", domain=[('is_parent', '=', True)], required=True,
-                                    help="Tell us who will take care of you")
+    guardian_name = fields.Char(string="Guardian", help="Tell us who will take care of you")
     description = fields.Text(string="Note")
     father_name = fields.Char(string="Father", help="Proud to say my father is")
     mother_name = fields.Char(string="Mother", help="My mother's name is")
