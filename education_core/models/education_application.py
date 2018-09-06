@@ -199,7 +199,7 @@ class StudentApplication(models.Model):
                                     required=True, help="Enter Student's Mother Tongue")
     admission_class = fields.Many2one('education.class', string="Class", required=True,
                                       help="Enter Class to which the admission is seeking")
-    admission_date = fields.Datetime('Admission Date', default=fields.Datetime.now, required=True)
+    admission_date = fields.Date(String='Admission Date')
     application_no = fields.Char(string='Application  No', required=True, copy=False, readonly=True,
                        index=True, default=lambda self: _('New'))
     company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.user.company_id)
