@@ -95,7 +95,7 @@ class StudentApplication(models.Model):
                 'medium': rec.medium.id,
                 'religion_id': rec.religion_id.id,
                 'caste_id': rec.caste_id.id,
-                'sec_lang': rec.sec_lang.id,
+
                 'mother_tongue': rec.mother_tongue.id,
                 'admission_class': rec.admission_class.id,
                 'company_id': rec.company_id.id,
@@ -192,9 +192,8 @@ class StudentApplication(models.Model):
                                        help="Choose Academic year for which the admission is choosing")
     medium = fields.Many2one('education.medium', string="Medium", required=True,
                              help="Choose the Medium of class, like English, Hindi etc")
-    sec_lang = fields.Many2one('education.subject', string="Second language",
-                               required=True, domain=[('is_language', '=', True)],
-                               help="Choose the Second language")
+ 
+
     mother_tongue = fields.Many2one('education.mother.tongue', string="Mother Tongue",
                                     required=True, help="Enter Student's Mother Tongue")
     admission_class = fields.Many2one('education.class', string="Class", required=True,
