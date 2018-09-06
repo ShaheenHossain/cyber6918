@@ -211,9 +211,9 @@ class StudentApplication(models.Model):
     street2 = fields.Char(string='Street2', help="Enter the street2")
     zip = fields.Char(change_default=True, string='ZIP code', help="Enter the Zip Code")
     city = fields.Char(string='City', help="Enter the City name")
-    state_id = fields.Many2one("res.country.state", string='State', ondelete='restrict',
+    state_id = fields.Many2one("state.state", string='State', ondelete='restrict',
                                help="Select the State where you are from")
-    country_id = fields.Many2one('res.country', string='Country', ondelete='restrict',
+    country_id = fields.Many2one('country.country', string='Country', ondelete='restrict',
                                  help="Select the Country")
     is_same_address = fields.Boolean(string="Permanent Address same as above", default=True,
                                      help="Tick the field if the Present and permanent address is same")
@@ -221,9 +221,9 @@ class StudentApplication(models.Model):
     per_street2 = fields.Char(string='Street2', help="Enter the street2")
     per_zip = fields.Char(change_default=True, string='ZIP code', help="Enter the Zip Code")
     per_city = fields.Char(string='City', help="Enter the City name")
-    per_state_id = fields.Many2one("res.country.state", string='State', ondelete='restrict',
+    per_state_id = fields.Many2one("state.state", string='State', ondelete='restrict',
                                    help="Select the State where you are from")
-    per_country_id = fields.Many2one('res.country', string='Country', ondelete='restrict',
+    per_country_id = fields.Many2one('country.country', string='Country', ondelete='restrict',
                                      help="Select the Country")
     date_of_birth = fields.Date(string="Date Of birth", required=True, help="Enter your DOB")
     guardian_name = fields.Char(string="Guardian", help="Tell us who will take care of you")
@@ -238,12 +238,12 @@ class StudentApplication(models.Model):
     verified_by = fields.Many2one('res.users', string='Verified by', help="The Document is verified by")
     reject_reason = fields.Many2one('application.reject.reason', string='Reject Reason',
                                     help="Application is rejected because")
-    gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('other', 'Other')],
-                              string='Gender', required=True, default='male', track_visibility='onchange',
+    gender = fields.Selection([('male', 'Male'), ('female', 'Female')],
+                              string='Gender', required=True, track_visibility='onchange',
                               help="Your Gender is ")
     blood_group = fields.Selection([('a+', 'A+'), ('a-', 'A-'), ('b+', 'B+'), ('o+', 'O+'), ('o-', 'O-'),
                                     ('ab-', 'AB-'), ('ab+', 'AB+')],
-                                   string='Blood Group', required=True, default='a+', track_visibility='onchange',
+                                   string='Blood Group', required=True, track_visibility='onchange',
                                    help="Your Blood Group is ")
     state = fields.Selection([('draft', 'Draft'), ('verification', 'Verify'),
                               ('approve', 'Approve'), ('reject', 'Reject'), ('done', 'Done')],
