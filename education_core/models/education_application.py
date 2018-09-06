@@ -73,15 +73,15 @@ class StudentApplication(models.Model):
                 'street': rec.street,
                 'street2': rec.street2,
                 'city': rec.city,
-                'state_id': rec.state_id.id,
-                'country_id': rec.country_id.id,
+                'mystate_id': rec.mystate_id.id,
+                'mycountry_id': rec.mycountry_id.id,
                 'zip': rec.zip,
                 'is_same_address': rec.is_same_address,
                 'per_street': rec.per_street,
                 'per_street2': rec.per_street2,
                 'per_city': rec.per_city,
-                'per_state_id': rec.per_state_id.id,
-                'per_country_id': rec.per_country_id.id,
+                'per_mystate_id': rec.myper_state_id.id,
+                'per_mycountry_id': rec.per_mycountry_id.id,
                 'per_zip': rec.per_zip,
                 'gender': rec.gender,
                 'date_of_birth': rec.date_of_birth,
@@ -107,8 +107,8 @@ class StudentApplication(models.Model):
                     'per_street': rec.street,
                     'per_street2': rec.street2,
                     'per_city': rec.city,
-                    'per_state_id': rec.state_id.id,
-                    'per_country_id': rec.country_id.id,
+                    'per_mystate_id': rec.mystate_id.id,
+                    'per_mycountry_id': rec.mycountry_id.id,
                     'per_zip': rec.zip,
                 })
 
@@ -211,20 +211,20 @@ class StudentApplication(models.Model):
     street2 = fields.Char(string='Street2', help="Enter the street2")
     zip = fields.Char(change_default=True, string='ZIP code', help="Enter the Zip Code")
     city = fields.Char(string='City', help="Enter the City name")
-    state_id = fields.Many2one("state.state", string='State', ondelete='restrict',
+    state_id = fields.Many2one("mystate.mystate", string='District Name', ondelete='restrict',
                                help="Select the State where you are from")
-    country_id = fields.Many2one('country.country', string='Country', ondelete='restrict',
-                                 help="Select the Country")
+    mycountry_id = fields.Many2one('mycountry.mycountry', string='Country Name', ondelete='restrict',
+                                 help="Select the Country Name")
     is_same_address = fields.Boolean(string="Permanent Address same as above", default=True,
                                      help="Tick the field if the Present and permanent address is same")
     per_street = fields.Char(string='Street', help="Enter the street")
     per_street2 = fields.Char(string='Street2', help="Enter the street2")
     per_zip = fields.Char(change_default=True, string='ZIP code', help="Enter the Zip Code")
     per_city = fields.Char(string='City', help="Enter the City name")
-    per_state_id = fields.Many2one("state.state", string='State', ondelete='restrict',
+    per_mystate_id = fields.Many2one("mystate.mystate", string='District Name', ondelete='restrict',
                                    help="Select the State where you are from")
-    per_country_id = fields.Many2one('country.country', string='Country', ondelete='restrict',
-                                     help="Select the Country")
+    per_mycountry_id = fields.Many2one('mycountry.mycountry', string='Country Name', ondelete='restrict',
+                                     help="Select the Country Name")
     date_of_birth = fields.Date(string="Date Of birth", required=True, help="Enter your DOB")
     guardian_name = fields.Char(string="Guardian", help="Tell us who will take care of you")
     description = fields.Text(string="Note")
