@@ -93,7 +93,7 @@ class StudentApplication(models.Model):
     # father_l_name_b = fields.Char(string="Father's Last Name", help="Proud to say my father is",required=True)
     father_NID = fields.Char(string="Father's NID", help="Father's NID",required=True)
     father_mobile = fields.Char(string="Father's Mobile No", help="Father's Mobile No")
-	father_email = fields.Char(string="Father's Email No", help="Father's Email No")
+    father_email = fields.Char(string="Father's Email No", help="Father's Email No")
     father_car_no = fields.Char(string="Car No", help="Car No")
     # father_name = fields.Many2one('res.partner', string="Father", domain=[('is_parent', '=', True)], required=True, help="Proud to say my father is")
     # mother_name = fields.Char(string="Mother", help="My mother's name is")
@@ -107,7 +107,7 @@ class StudentApplication(models.Model):
     # mother_l_name_b = fields.Char(string="মায়ের শেষ নাম", help="Proud to say my mother is",required=True)
     mother_NID = fields.Char(string="Mother's NID", help="mother's NID",required=True)
     mother_mobile = fields.Char(string="Mother's Mobile No", help="mother's Mobile No")
-	mother_emial = fields.Char(string="Mother's email No", help="mother's Email No")
+    mother_email = fields.Char(string="Mother's email No", help="mother's Email No")
     # mother_car_no = fields.Char(string="mother's Car No", help="mother's Car No")
 
     religion_id = fields.Many2one('religion.religion', string="Religion", help="My Religion is ")
@@ -242,8 +242,8 @@ class StudentApplication(models.Model):
                 'blood_group': rec.blood_group,
                 'nationality': rec.nationality.id,
                 'email': rec.email,
-				'father_email': rec.father_email,
-				'mother_email': rec.mother_email,
+		'father_email': rec.father_email,
+		'mother_email': rec.mother_email,
                 'mobile': rec.mobile,
                 'phone': rec.phone,
                 'image': rec.image,
