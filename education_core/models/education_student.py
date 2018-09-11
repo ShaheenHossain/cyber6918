@@ -69,7 +69,7 @@ class EducationStudent(models.Model):
     admission_class = fields.Many2one('education.class', string="Admission Class")
     ad_no = fields.Char(string="Admission Number", readonly=True)
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')],
-                              string='Gender', default='male', track_visibility='onchange')
+                              string='Gender', track_visibility='onchange')
     blood_group = fields.Selection([('a+', 'A+'), ('a-', 'A-'), ('b+', 'B+'), ('o+', 'O+'), ('o-', 'O-'),
                                     ('ab-', 'AB-'), ('ab+', 'AB+')],
                                    string='Blood Group', track_visibility='onchange')
