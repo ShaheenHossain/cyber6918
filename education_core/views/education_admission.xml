@@ -146,11 +146,11 @@
                              <group col="4">
                                  <separator string="Father's Information" />
                                  <field name="father_name" placeholder="Name" />
-								 <field name="father_name_b" placeholder="নাম" />
-								 <field name="father_NID"/>
+				 <field name="father_name_b" placeholder="নাম" />
+				 <field name="father_NID"/>
                                  <field name="father_car_no"/>
                                  <field name="father_mobile"/>
-								 <field name="father_email"/>
+				 <field name="father_email"/>
                                  
                                  <!--<field name="father_m_name" nolabel='1' placeholder="Middle Name" colspan="2"/>-->
                                  <!--<field name="father_l_name" nolabel='1' placeholder="Last Name" colspan="2"/>-->                                 
@@ -159,11 +159,11 @@
                              </group>
                              <group col="4">
                                  <separator string="Mother's Information"/>
-								 <field name="mother_name" placeholder="Name"/>
-								 <field name="mother_name_b" placeholder="নাম"/>
+				 <field name="mother_name" placeholder="Name"/>
+				 <field name="mother_name_b" placeholder="নাম"/>
                                  <field name="mother_NID"/>
                                  <field name="mother_mobile"/>
-								 <field name="mother_email"/>
+				 <field name="mother_email"/>
 								 
                                  <!-- <field name="mother_car_no"/> -->
                                  <!--<field name="mother_m_name" nolabel='1' placeholder="Middle Name" colspan="2"/>-->
@@ -177,8 +177,8 @@
                              <group col="4">
                                 <separator String="Guardians Information" colspan="6"/>
                                  <field name="guardian_relation" attrs="{'readonly': [('state', '=', 'done')]}" colspan="6"/>
-								 <field name="guardian_name" placeholder="Name"/>
-								 <field name="guardian_NID"/>                                 
+				 <field name="guardian_name" placeholder="Name"/>
+				 <field name="guardian_NID"/>                                 
                                  <field name="guardian_mobile"/>
 
                                  <!-- <field name="guardian_car_no"/> --> 
