@@ -27,7 +27,7 @@
                                 </t>
                             </div>
                             <div class="oe_kanban_details">
-                                <strong class="o_kanban_record_title oe_partner_heading"><field name="name"/> <field name="last_name"/></strong>
+                                <strong class="o_kanban_record_title oe_partner_heading"><field name="name"/></strong>
                                 <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
                                 <ul>
                                     <li t-if="record.class_id.raw_value">
@@ -63,7 +63,6 @@
                 <field name="ad_no"/>
                 <field name="student_id"/>
                 <field name="name"/>
-                <field name="last_name"/>
                 <field name="gender"/>
                 <field name="date_of_birth"/>
                 <field name="blood_group"/>
