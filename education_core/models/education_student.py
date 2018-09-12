@@ -49,11 +49,11 @@ class EducationStudent(models.Model):
 
     partner_id = fields.Many2one(
         'res.partner', string='Partner', required=True, ondelete="cascade")
-    middle_name = fields.Char(string='Middle Name')
-    last_name = fields.Char(string='Last Name')
-    name_b = fields.Char("নামের প্রথম অংশ")
-    middle_name_b = fields.Char("নামের মধ্যাংশ")
-    last_name_b = fields.Char("নামের শেষাংশ")
+    # middle_name = fields.Char(string='Middle Name')
+    #last_name = fields.Char(string='Last Name')
+    name_b = fields.Char("নাম")
+    # middle_name_b = fields.Char("নামের মধ্যাংশ")
+    # last_name_b = fields.Char("নামের শেষাংশ")
     application_no = fields.Char(string="Application No")
     date_of_birth = fields.Date(string="Date Of birth", requird=True)
     guardian_relation = fields.Many2one('gurdian.student.relation', string="Relation to Guardian", required=True,
@@ -68,11 +68,11 @@ class EducationStudent(models.Model):
     class_id = fields.Many2one('education.class.division', string="Class")
     admission_class = fields.Many2one('education.class', string="Admission Class")
     ad_no = fields.Char(string="Admission Number", readonly=True)
-    gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('other', 'Other')],
-                              string='Gender', required=True, default='male', track_visibility='onchange')
+    gender = fields.Selection([('male', 'Male'), ('female', 'Female')],
+                              string='Gender', required=True, track_visibility='onchange')
     blood_group = fields.Selection([('a+', 'A+'), ('a-', 'A-'), ('b+', 'B+'), ('o+', 'O+'), ('o-', 'O-'),
                                     ('ab-', 'AB-'), ('ab+', 'AB+')],
-                                   string='Blood Group', required=True, default='a+', track_visibility='onchange')
+                                   string='Blood Group', track_visibility='onchange')
     company_id = fields.Many2one('res.company', string='Company')
     per_street = fields.Char()
     per_street2 = fields.Char()
@@ -80,10 +80,10 @@ class EducationStudent(models.Model):
     per_city = fields.Char()
     per_state_id = fields.Many2one("res.country.state", string='State', ondelete='restrict')
     per_country_id = fields.Many2one('res.country', string='Country', ondelete='restrict',default=19)
-    medium = fields.Many2one('education.medium', string="Medium", required=True)
-    sec_lang = fields.Many2one('education.subject', string="Second language", required=False, domain=[('is_language', '=', True)])
-    mother_tongue = fields.Many2one('education.mother.tongue', string="Mother Tongue", required=True, domain=[('is_language', '=', True)])
-    caste_id = fields.Many2one('religion.caste', string="Caste")
+    #medium = fields.Many2one('education.medium', string="Medium", required=True)
+    #sec_lang = fields.Many2one('education.subject', string="Second language", required=False, domain=[('is_language', '=', True)])
+    #mother_tongue = fields.Many2one('education.mother.tongue', string="Mother Tongue", required=True, domain=[('is_language', '=', True)])
+    #caste_id = fields.Many2one('religion.caste', string="Caste")
     religion_id = fields.Many2one('religion.religion', string="Religion")
     is_same_address = fields.Boolean(string="Is same Address?")
     nationality = fields.Many2one('res.country', string='Nationality', ondelete='restrict',default=19,)
