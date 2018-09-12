@@ -31,8 +31,6 @@
                                 </tr>
                                 <tr>
                                     <td><strong> name <span t-field="o.student_id.name"/>
-                                                        <span t-field="o.student_id.middle_name"/>
-                                                        <span t-field="o.student_id.last_name"/>
                                         </strong>
                                     </td>
                                 </tr>
