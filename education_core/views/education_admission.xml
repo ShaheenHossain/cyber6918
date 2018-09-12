@@ -116,7 +116,7 @@
                      <div  attrs="{'invisible':[('already_student','=',True)]}">
                     <separator/>
                     <group string="Admission Details">
-                            <field name="student_category" required="1" placeholder="Internal or External"/>
+                            <field name="student_category" placeholder="Internal or External"/>
                             <field name="register_id" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/>
                             <field name="academic_year_id" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/>
                             <field name="application_date" attrs="{'readonly': [('state', '=', 'done')]}"/>
