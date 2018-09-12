@@ -97,12 +97,12 @@
                         <h4>
                             <table>
                                 <tr>
-                                    <td style="padding-right:10px;"><field name="name" placeholder="First Name" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
+                                    <td style="padding-right:10px;"><field name="name" placeholder="Name" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
                                     <!--<td style="padding-right:10px;"><field name="middle_name" placeholder="Middle Name" attrs="{'readonly': [('state', '=', 'done')]}"/></td>-->
                                     <!--<td style="padding-right:10px;"><field name="last_name" placeholder="Last Name" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>-->
                                 </tr>
                                 <tr>
-                                    <td style="padding-right:10px;"><field name="name_b" placeholder="নামের প্রথম অংশ" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
+                                    <td style="padding-right:10px;"><field name="name_b" placeholder="নাম" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
                                     <!--<td style="padding-right:10px;"><field name="middle_name_b" placeholder="নামের মধ্যাংশ" attrs="{'readonly': [('state', '=', 'done')]}"/></td>-->
                                     <!--<td style="padding-right:10px;"><field name="last_name_b" placeholder="নামের শেষাংশ" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>-->
                                 </tr>
@@ -122,7 +122,7 @@
                             <field name="application_date" attrs="{'readonly': [('state', '=', 'done')]}"/>
                             <!--<field name="admission_class" attrs="{'readonly': [('state', '=', 'done')]}"/>-->
                             <!--<field name="sec_lang" attrs="{'readonly': [('state', '=', 'done')]}"/>-->
-                            <field name="medium" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                            <!-- <field name="medium" attrs="{'readonly': [('state', '=', 'done')]}"/> -->
                             <field name="company_id" groups="base.group_multi_company" attrs="{'readonly': [('state', '=', 'done')]}"/>
                             <field name="prev_school" attrs="{'readonly': [('state', '=', 'done')]}"/>
 
@@ -132,7 +132,7 @@
                         <group col="4">
                             <field name="date_of_birth" attrs="{'readonly': [('state', '=', 'done')]}"/>
                             <field name="blood_group" attrs="{'readonly': [('state', '=', 'done')]}"/>
-                            <field name="mother_tongue" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                            <!-- <field name="mother_tongue" attrs="{'readonly': [('state', '=', 'done')]}"/> -->
                             <!--<field name="father_name" attrs="{'readonly': [('state', '=', 'done')]}"/>-->
                             <!--<field name="mother_name" attrs="{'readonly': [('state', '=', 'done')]}"/>-->
                             <field name="gender" attrs="{'readonly': [('state', '=', 'done')]}"/>
@@ -148,22 +148,22 @@
                                  <field name="father_NID"/>
                                  <field name="father_car_no"/>
                                  <field name="father_mobile"/>
-                                 <field name="father_name" nolabel='1' placeholder="First Name" colspan="2"/>
+                                 <field name="father_name" nolabel='1' placeholder="Name" colspan="2"/>
                                  <!--<field name="father_m_name" nolabel='1' placeholder="Middle Name" colspan="2"/>-->
                                  <!--<field name="father_l_name" nolabel='1' placeholder="Last Name" colspan="2"/>-->
-                                 <field name="father_name_b" nolabel='1' placeholder="নামের প্রথম অংশ" colspan="2"/>
+                                 <field name="father_name_b" nolabel='1' placeholder="নাম" colspan="2"/>
                                  <!--<field name="father_m_name_b" nolabel='1' placeholder="নামের মধ্যাংশ" colspan="2"/>-->
                                  <!--<field name="father_l_name_b" nolabel='1' placeholder="নামের শেষ অংশ" colspan="2"/>-->
                              </group>
                              <group col="6">
                                  <separator string="Mother's Information" colspan="6"/>
                                  <field name="mother_NID"/>
-                                 <field name="mother_car_no"/>
+                                 <!-- <field name="mother_car_no"/> -->
                                  <field name="mother_mobile"/>
-                                 <field name="mother_name" nolabel='1' placeholder="First Name" colspan="2"/>
+                                 <field name="mother_name" nolabel='1' placeholder="Name" colspan="2"/>
                                  <!--<field name="mother_m_name" nolabel='1' placeholder="Middle Name" colspan="2"/>-->
                                  <!--<field name="mother_l_name" nolabel='1' placeholder="Last Name" colspan="2"/>-->
-                                 <field name="mother_name_b" nolabel='1' placeholder="নামের প্রথম অংশ" colspan="2"/>
+                                 <field name="mother_name_b" nolabel='1' placeholder="নাম" colspan="2"/>
                                  <!--<field name="mother_m_name_b" nolabel='1' placeholder="নামের মধ্যাংশ" colspan="2"/>-->
                                  <!--<field name="mother_l_name_b" nolabel='1' placeholder="নামের শেষ অংশ" colspan="2"/>-->
                              </group>
@@ -274,12 +274,12 @@
             <search string="Search Application">
                 <!--<field name="admission_class"/>-->
                 <field name="application_no"/>
-                <field name="medium"/>
+                <!-- <field name="medium"/> -->
                 <!--<field name="sec_lang"/>-->
                 <field name="gender"/>
                 <field name="religion_id"/>
-                <field name="caste_id"/>
-                <field name="mother_tongue"/>
+                <!--<field name="caste_id"/> -->
+                <!-- <field name="mother_tongue"/> -->
                 <filter string="New Application" name="new_application" domain="[('state','!=','done')]"/>
                 <filter string="Draft" name="draft_filter" domain="[('state','=','draft')]"/>
                 <filter string="Done" name="active" domain="[('state','=','done')]"/>
@@ -288,10 +288,10 @@
                     <!--<filter string='Admission To' icon="fa-user" domain="[]" context="{'group_by' : 'admission_class'}"/>-->
                     <filter string='Academic Year' icon="fa-user" domain="[]" context="{'group_by' : 'academic_year_id'}"/>
                     <filter string='Gender' icon="fa-genderless" domain="[]" context="{'group_by' : 'gender'}"/>
-                    <filter string='Medium' icon="fa-medium" domain="[]" context="{'group_by' : 'medium'}"/>
+                    <!-- <filter string='Medium' icon="fa-medium" domain="[]" context="{'group_by' : 'medium'}"/> -->
                     <filter string='Religion' icon="fa-pencil-square-o" domain="[]" context="{'group_by' : 'religion_id'}"/>
-                    <filter string='Caste' icon="fa-pencil-square-o" domain="[]" context="{'group_by' : 'caste_id'}"/>
-                    <filter string='Mother Tongue' icon="fa fa-language" domain="[]" context="{'group_by' : 'mother_tongue'}"/>
+                    <!-- <filter string='Caste' icon="fa-pencil-square-o" domain="[]" context="{'group_by' : 'caste_id'}"/> -->
+                    <!-- <filter string='Mother Tongue' icon="fa fa-language" domain="[]" context="{'group_by' : 'mother_tongue'}"/> -->
                </group>
            </search>
         </field>
