@@ -102,7 +102,7 @@
                                     <!--<td style="padding-right:10px;"><field name="last_name" placeholder="Last Name" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>-->
                                 </tr>
                                 <tr>
-                                    <td style="padding-right:10px;"><field name="name_b" placeholder="নাম (বাংলায়)" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
+                                    <td style="padding-right:10px;"><field name="name_b" placeholder="নাম (বাংলায়)" attrs="{'readonly': [('state', '=', 'done')]}"/></td>
                                     <!--<td style="padding-right:10px;"><field name="middle_name_b" placeholder="নামের মধ্যাংশ" attrs="{'readonly': [('state', '=', 'done')]}"/></td>-->
                                     <!--<td style="padding-right:10px;"><field name="last_name_b" placeholder="নামের শেষাংশ" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/></td>-->
                                 </tr>
