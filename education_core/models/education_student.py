@@ -79,7 +79,6 @@ class EducationStudent(models.Model):
     medium = fields.Many2one('education.medium', string="Medium", required=True)
     sec_lang = fields.Many2one('education.subject', string="Second language", required=False, domain=[('is_language', '=', True)])
     mother_tongue = fields.Many2one('education.mother.tongue', string="Mother Tongue", required=True, domain=[('is_language', '=', True)])
-    caste_id = fields.Many2one('religion.caste', string="Caste")
     religion_id = fields.Many2one('religion.religion', string="Religion")
     is_same_address = fields.Boolean(string="Is same Address?")
     nationality = fields.Many2one('res.country', string='Nationality', ondelete='restrict',default=19,)
