@@ -144,9 +144,9 @@ class StudentApplication(models.Model):
     def send_to_verify(self):
         """Button action for sending the application for the verification"""
         for rec in self:
-            document_ids = self.env['education.documents'] # .search([('application_ref', '=', rec.id)])
-            if not document_ids:
-                raise ValidationError(_('No Documents provided'))
+        #   document_ids = self.env['education.documents'] # .search([('application_ref', '=', rec.id)])
+        #    if not document_ids:
+        #        raise ValidationError(_('No Documents provided'))
             rec.write({
                 'state': 'verification'
             })
