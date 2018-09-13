@@ -138,7 +138,6 @@
                             <field name="gender" attrs="{'readonly': [('state', '=', 'done')]}"/>
                             <field name="nationality" attrs="{'readonly': [('state', '=', 'done')]}"/>
                             <field name="religion_id" attrs="{'readonly': [('state', '=', 'done')]}"/>
-                            <!--<field name="caste_id" attrs="{'readonly': [('state', '=', 'done')]}"/>-->
                             <!--<field name="guardian_name" attrs="{'readonly': [('state', '=', 'done')] }"/>-->
                         </group>
                      </page>
@@ -278,7 +277,6 @@
                 <!--<field name="sec_lang"/>-->
                 <field name="gender"/>
                 <field name="religion_id"/>
-                <field name="caste_id"/>
                 <field name="mother_tongue"/>
                 <filter string="New Application" name="new_application" domain="[('state','!=','done')]"/>
                 <filter string="Draft" name="draft_filter" domain="[('state','=','draft')]"/>
@@ -290,7 +288,6 @@
                     <filter string='Gender' icon="fa-genderless" domain="[]" context="{'group_by' : 'gender'}"/>
                     <filter string='Medium' icon="fa-medium" domain="[]" context="{'group_by' : 'medium'}"/>
                     <filter string='Religion' icon="fa-pencil-square-o" domain="[]" context="{'group_by' : 'religion_id'}"/>
-                    <filter string='Caste' icon="fa-pencil-square-o" domain="[]" context="{'group_by' : 'caste_id'}"/>
                     <filter string='Mother Tongue' icon="fa fa-language" domain="[]" context="{'group_by' : 'mother_tongue'}"/>
                </group>
            </search>
