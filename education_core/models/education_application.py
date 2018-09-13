@@ -155,7 +155,7 @@ class StudentApplication(models.Model):
     def create_student(self):
         """Create student from the application and data and return the student"""
         for rec in self:
-            father_id=self.env['res.partner'].search([('nid_no','=',rec.father_NID)])
+            father_id=self.env['res.partner'] # .search([('nid_no','=',rec.father_NID)])
             if father_id.id:
                 father =father_id.id
             else:
@@ -167,7 +167,7 @@ class StudentApplication(models.Model):
                                                 'gender': 'male',
                                                 'is_parent': True})
                 father=new_father_id.id
-            mother_id = self.env['res.partner'].search([('nid_no', '=', rec.mother_NID)])
+            mother_id = self.env['res.partner'] # .search([('nid_no', '=', rec.mother_NID)])
             if mother_id.id:
                 mother = mother_id.id
             else:
@@ -176,7 +176,7 @@ class StudentApplication(models.Model):
                                                   'gender': 'female',
                                                   'is_parent': True})
                 mother = new_mother_id.id
-            guardian_id = self.env['res.partner'].search([('nid_no', '=', rec.guardian_NID )])
+            guardian_id = self.env['res.partner'] # .search([('nid_no', '=', rec.guardian_NID )])
             if guardian_id.id:
                 guardian = guardian_id.id
             else:
