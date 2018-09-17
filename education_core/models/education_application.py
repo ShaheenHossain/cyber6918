@@ -124,11 +124,11 @@ class StudentApplication(models.Model):
     reject_reason = fields.Many2one('application.reject.reason', string='Reject Reason',
                                     help="Application is rejected because")
     gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('other', 'Other')],
-                              string='Gender', required=True, default='male', track_visibility='onchange',
+                              string='Gender', track_visibility='onchange',
                               help="Your Gender is ")
     blood_group = fields.Selection([('a+', 'A+'), ('a-', 'A-'), ('b+', 'B+'), ('o+', 'O+'), ('o-', 'O-'),
                                     ('ab-', 'AB-'), ('ab+', 'AB+')],
-                                   string='Blood Group', required=True, default='a+', track_visibility='onchange',
+                                   string='Blood Group', track_visibility='onchange',
                                    help="Your Blood Group is ")
     state = fields.Selection([('draft', 'Draft'), ('verification', 'Verify'),
                               ('approve', 'Approve'), ('reject', 'Reject'), ('done', 'Done')],
