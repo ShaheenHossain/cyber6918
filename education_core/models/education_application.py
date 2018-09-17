@@ -84,7 +84,7 @@ class StudentApplication(models.Model):
     guardian_name = fields.Char(string="guardian's First Name", help="Proud to say my guardian is",required=True)
     # guardian_m_name = fields.Char(string="guardian's Middle Name", help="Proud to say my guardian is")
     # guardian_l_name = fields.Char(string="guardian's Last Name", help="Proud to say my guardian is",required=True)
-    guardian_NID = fields.Char(string="guardian's NID", help="guardian's NID",required=True)
+    guardian_NID = fields.Char(string="guardian's NID", help="guardian's NID")
     guardian_mobile = fields.Char(string="guardian's Mobile No", help="guardian's Mobile No")
     guardian_car_no = fields.Char(string="guardian's Car No", help="guardian's Car No")
 
@@ -95,10 +95,10 @@ class StudentApplication(models.Model):
     father_name = fields.Char(string="Father's First Name", help="Proud to say my father is",required=True)
     # father_m_name = fields.Char(string="বাবার নাম মধ্য অংশ", help="Proud to say my father is")
     # father_l_name = fields.Char(string="Father's Last Name", help="Proud to say my father is",required=True)
-    father_name_b = fields.Char(string="বাবার নাম প্রথম অংশ", help="Proud to say my father is",required=True)
+    father_name_b = fields.Char(string="বাবার নাম প্রথম অংশ", help="Proud to say my father is",)
     # father_m_name_b = fields.Char(string="বাবার নাম মাঝের অংশ", help="Proud to say my father is")
     # father_l_name_b = fields.Char(string="Father's Last Name", help="Proud to say my father is",required=True)
-    father_NID = fields.Char(string="Father's NID", help="Father's NID",required=True)
+    father_NID = fields.Char(string="Father's NID", help="Father's NID")
     father_mobile = fields.Char(string="Father's Mobile No", help="Father's Mobile No")
     father_car_no = fields.Char(string="Father's Car No", help="Father's Car No")
     # father_name = fields.Many2one('res.partner', string="Father", domain=[('is_parent', '=', True)], required=True, help="Proud to say my father is")
@@ -106,12 +106,12 @@ class StudentApplication(models.Model):
     # mother_name = fields.Many2one('res.partner', string="Mother", domain=[('is_parent', '=', True)], required=True, help="My mother name is")
     #### Mother Details
     mother_name = fields.Char(string="mother's First Name", help="Proud to say my mother is",required=True)
-    mother_name_b = fields.Char(string="মা এর প্রথম নাম", help="Proud to say my mother is",required=True)
+    mother_name_b = fields.Char(string="মা এর প্রথম নাম", help="Proud to say my mother is",)
     # mother_m_name = fields.Char(string="mother's Middle Name", help="Proud to say my mother is")
     # mother_m_name_b = fields.Char(string="মা এর মধ্যনাম", help="Proud to say my mother is")
     # mother_l_name = fields.Char(string="mother's Last Name", help="Proud to say my mother is",required=True)
     # mother_l_name_b = fields.Char(string="মায়ের শেষ নাম", help="Proud to say my mother is",required=True)
-    mother_NID = fields.Char(string="mother's NID", help="mother's NID",required=True)
+    mother_NID = fields.Char(string="mother's NID", help="mother's NID",)
     mother_mobile = fields.Char(string="mother's Mobile No", help="mother's Mobile No")
     mother_car_no = fields.Char(string="mother's Car No", help="mother's Car No")
 
@@ -183,7 +183,7 @@ class StudentApplication(models.Model):
     def create_student(self):
         """Create student from the application and data and return the student"""
         for rec in self:
-            father_id=self.env['res.partner'].search([('nid_no','=',rec.father_NID)])
+            father_id=self.env['res.partner'] #.search([('nid_no','=',rec.father_NID)])
             if father_id.id:
                 father =father_id.id
             else:
@@ -199,7 +199,7 @@ class StudentApplication(models.Model):
                                                 'gender': 'male',
                                                 'is_parent': True})
                 father=new_father_id.id
-            mother_id = self.env['res.partner'].search([('nid_no', '=', rec.mother_NID)])
+            mother_id = self.env['res.partner'] #.search([('nid_no', '=', rec.mother_NID)])
             if mother_id.id:
                 mother = mother_id.id
             else:
@@ -208,7 +208,7 @@ class StudentApplication(models.Model):
                                                   'gender': 'female',
                                                   'is_parent': True})
                 mother = new_mother_id.id
-            guardian_id = self.env['res.partner'].search([('nid_no', '=', rec.guardian_NID )])
+            guardian_id = self.env['res.partner'] #.search([('nid_no', '=', rec.guardian_NID )])
             if guardian_id.id:
                 guardian = guardian_id.id
             else:
