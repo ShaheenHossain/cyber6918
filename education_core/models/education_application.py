@@ -8,7 +8,7 @@ class GuardianStudentRelation(models.Model):
     name=fields.Char(string='Name',required=True)
     gender=fields.Selection([('male',"Male"),
                              ('female','Female')])
-    relation=fields.Char(string='Relation',required=True)
+    relation=fields.Char(string='Relation')
     reverse_male=fields.Char(string='Reverse  Relation (Male)',required=True)
     reverse_female=fields.Char(string='Reverse Relation (Female)',required=True)
 
@@ -19,11 +19,7 @@ class StudentApplication(models.Model):
     _order = 'id desc'
 
     name = fields.Char(string='Name', required=True, help="Enter First name of Student")
-    middle_name = fields.Char(string='Middle Name', help="Enter Middle name of Student")
-    last_name = fields.Char(string='Last Name', help="Enter Last name of Student")
-    name_b = fields.Char("নামের প্রথম অংশ",required=True)
-    # middle_name_b = fields.Char("নামের মধ্যাংশ")
-    # last_name_b = fields.Char("নামের শেয়াংশ",required=True)
+    name_b = fields.Char("নাম",required=True)
     already_student=fields.Boolean("Allready Admitted?")
     ############
     #these are for import data
@@ -42,9 +38,6 @@ class StudentApplication(models.Model):
                                        help="Choose Academic year for which the admission is choosing")
     medium = fields.Many2one('education.medium', string="Medium", required=True,default=1,
                              help="Choose the Medium of class, like Bengali,English etc")
-    # sec_lang = fields.Many2one('education.medium', string="Second language",required=False,default=1,
-    #                            # domain=[('is_language', '=', True)],
-    #                            help="Choose the Second language")
     mother_tongue = fields.Many2one('education.medium', string="Mother Tongue",default=1,
                                     required=True, help="Enter Student's Mother Tongue")
     register_id = fields.Many2one('education.admission.register', string="Admission Register", required=True,
@@ -82,8 +75,6 @@ class StudentApplication(models.Model):
                                         help="Tell us the Relation toyour guardian")
     #### guardian Details
     guardian_name = fields.Char(string="guardian's First Name", help="Proud to say my guardian is",required=True)
-    # guardian_m_name = fields.Char(string="guardian's Middle Name", help="Proud to say my guardian is")
-    # guardian_l_name = fields.Char(string="guardian's Last Name", help="Proud to say my guardian is",required=True)
     guardian_NID = fields.Char(string="guardian's NID", help="guardian's NID")
     guardian_mobile = fields.Char(string="guardian's Mobile No", help="guardian's Mobile No")
     guardian_car_no = fields.Char(string="guardian's Car No", help="guardian's Car No")
@@ -92,31 +83,19 @@ class StudentApplication(models.Model):
     #                                 help="Tell us who will take care of you")
     description = fields.Text(string="Note")
     #### Father Details
-    father_name = fields.Char(string="Father's First Name", help="Proud to say my father is",required=True)
-    # father_m_name = fields.Char(string="বাবার নাম মধ্য অংশ", help="Proud to say my father is")
-    # father_l_name = fields.Char(string="Father's Last Name", help="Proud to say my father is",required=True)
-    father_name_b = fields.Char(string="বাবার নাম প্রথম অংশ", help="Proud to say my father is",)
-    # father_m_name_b = fields.Char(string="বাবার নাম মাঝের অংশ", help="Proud to say my father is")
-    # father_l_name_b = fields.Char(string="Father's Last Name", help="Proud to say my father is",required=True)
+    father_name = fields.Char(string="Father's Name", help="Proud to say my father is",required=True)
+    father_name_b = fields.Char(string="বাবার নাম", help="Proud to say my father is",)
     father_NID = fields.Char(string="Father's NID", help="Father's NID")
     father_mobile = fields.Char(string="Father's Mobile No", help="Father's Mobile No")
     father_car_no = fields.Char(string="Father's Car No", help="Father's Car No")
-    # father_name = fields.Many2one('res.partner', string="Father", domain=[('is_parent', '=', True)], required=True, help="Proud to say my father is")
-    # mother_name = fields.Char(string="Mother", help="My mother's name is")
-    # mother_name = fields.Many2one('res.partner', string="Mother", domain=[('is_parent', '=', True)], required=True, help="My mother name is")
     #### Mother Details
-    mother_name = fields.Char(string="mother's First Name", help="Proud to say my mother is",required=True)
-    mother_name_b = fields.Char(string="মা এর প্রথম নাম", help="Proud to say my mother is",)
-    # mother_m_name = fields.Char(string="mother's Middle Name", help="Proud to say my mother is")
-    # mother_m_name_b = fields.Char(string="মা এর মধ্যনাম", help="Proud to say my mother is")
-    # mother_l_name = fields.Char(string="mother's Last Name", help="Proud to say my mother is",required=True)
-    # mother_l_name_b = fields.Char(string="মায়ের শেষ নাম", help="Proud to say my mother is",required=True)
+    mother_name = fields.Char(string="mother's Name", help="Proud to say my mother is",required=True)
+    mother_name_b = fields.Char(string="মা এর নাম", help="Proud to say my mother is",)
     mother_NID = fields.Char(string="mother's NID", help="mother's NID",)
     mother_mobile = fields.Char(string="mother's Mobile No", help="mother's Mobile No")
     mother_car_no = fields.Char(string="mother's Car No", help="mother's Car No")
 
     religion_id = fields.Many2one('religion.religion', string="Religion", help="My Religion is ")
-    caste_id = fields.Many2one('religion.caste', string="Caste", help="My Caste is ")
     class_id = fields.Many2one('education.class.division', string="Class")
     active = fields.Boolean(string='Active', default=True)
     document_count = fields.Integer(compute='_document_count', string='# Documents')
@@ -143,15 +122,11 @@ class StudentApplication(models.Model):
                     rec.guardian_mobile=rec.father_mobile
                     rec.guardian_car_no=rec.father_car_no
                     rec.guardian_name=rec.father_name
-                    # rec.guardian_m_name=rec.father_m_name
-                    # rec.guardian_l_name=rec.father_l_name
                 elif  rec.guardian_relation.name=='Mother':
                     rec.guardian_NID = rec.mother_NID
                     rec.guardian_mobile = rec.mother_mobile
                     rec.guardian_car_no = rec.mother_car_no
                     rec.guardian_name = rec.mother_name
-                    # rec.guardian_m_name = rec.mother_m_name
-                    # rec.guardian_l_name = rec.mother_l_name
 
     @api.model
     def create(self, vals):
@@ -192,10 +167,6 @@ class StudentApplication(models.Model):
                                                 'mobile': rec.father_mobile,
                                                 'car_no': rec.father_car_no,
                                                 'name_b': rec.father_name_b,
-                                                # 'middle_name': rec.father_m_name,
-                                                # 'middle_name_b': rec.father_m_name_b,
-                                                # 'last_name_b': rec.father_l_name_b,
-                                                # 'last_name': rec.father_l_name,
                                                 'gender': 'male',
                                                 'is_parent': True})
                 father=new_father_id.id
@@ -220,10 +191,6 @@ class StudentApplication(models.Model):
             values = {
                 'name': rec.name,
                 'name_b': rec.name_b,
-                # 'last_name': rec.last_name,
-                # 'last_name_b':rec.last_name_b,
-                # 'middle_name': rec.middle_name,
-                # 'middle_name_b': rec.middle_name_b,
                 'application_id': rec.id,
                 'father_name': father,
                 'mother_name': mother,
@@ -253,8 +220,6 @@ class StudentApplication(models.Model):
                 'is_student': True,
                 'medium': rec.medium.id,
                 'religion_id': rec.religion_id.id,
-                'caste_id': rec.caste_id.id,
-                # 'sec_lang': rec.sec_lang.id,
                 'mother_tongue': rec.mother_tongue.id,
                 'admission_class': rec.register_id.standard.id,
                 'company_id': rec.company_id.id,
